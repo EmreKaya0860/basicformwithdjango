@@ -1,0 +1,12 @@
+{% extends 'formapp/SideBar.html' %} {% block content %} {% if message_list %}
+{% for message in message_list %}
+<ul class="w3-ul w3-border">
+  <li><h2>{{forloop.counter}}. Mesaj</h2></li>
+  <li><p>Name : {{message.name}}</p></li>
+  <li><p>Email : {{message.email}}</p></li>
+  <li><p>Phone : {{message.phone}}</p></li>
+  <li><p>Message : {{message.message}}</p></li>
+</ul>
+{% endfor %} {% else %}
+<p>No massage came yet</p>
+{% endif %} {% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'formapp/SideBar.html'%} {% block content %}
+<form method="post" action="{% url 'formapp:ThirdPage' %}">
+  {% csrf_token %}
+  <div class="mb-3 form-label">{{ form.as_p }}</div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% if message_list %} {% for message in message_list %}
+<ul class="w3-ul w3-border w3-margin-left">
+  <li><h2>{{forloop.counter}}. Mesaj</h2></li>
+  <li><p>Name : {{message.name}}</p></li>
+  <li><p>Email : {{message.email}}</p></li>
+  <li><p>Phone : {{message.phone}}</p></li>
+  <li><p>Message : {{message.message}}</p></li>
+</ul>
+{% endfor %} {% else %}
+<p>No massage came yet</p>
+{% endif %} {% endblock %}

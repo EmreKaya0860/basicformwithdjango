@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="w3-sidebar w3-bar-block w3-blue" style="width: 20%">
+      <a
+        href="{% url 'formapp:HomePage' %}"
+        class="w3-bar-item w3-button w3-border-bottom"
+        >Anasayfa</a
+      >
+      <a
+        href="{% url 'formapp:FirstPage' %}"
+        class="w3-bar-item w3-button w3-border-bottom"
+        >1. sayfa</a
+      >
+      <a
+        href="{% url 'formapp:SecondPage' %}"
+        class="w3-bar-item w3-button w3-border-bottom"
+        >2. Sayfa</a
+      >
+      <a
+        href="{% url 'formapp:ThirdPage' %}"
+        class="w3-bar-item w3-button w3-border-bottom"
+        >3. Sayfa</a
+      >
+    </div>
+    <div style="margin-left: 20%; display: flex">
+      {% block content %} {% endblock%}
+    </div>
+  </body>
+</html>
